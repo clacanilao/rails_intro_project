@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyString
+  date: 2024-02-09 22:10:06
+  rocket: one
+  launchpad: one
+  outcome: MyString
+
+two:
+  id: MyString
+  date: 2024-02-09 22:10:06
+  rocket: two
+  launchpad: two
+  outcome: MyString
