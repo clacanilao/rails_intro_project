@@ -5,7 +5,7 @@ class CreateCrews < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :image
       t.string :status
-      t.string :wiki_link
+      t.string :wikilink
 
       t.timestamps
     end

@@ -5,11 +5,11 @@ one:
   name: MyString
   image: MyString
   status: MyString
-  wiki_link: MyString
+  wikilink: MyString
 
 two:
   id: MyString
   name: MyString
   image: MyString
   status: MyString
-  wiki_link: MyString
+  wikilink: MyString
