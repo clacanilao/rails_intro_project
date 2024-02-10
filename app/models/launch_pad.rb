@@ -10,5 +10,7 @@ class LaunchPad < ApplicationRecord
   validates :latitude, numericality: { in: -90..90 }
   validates :longitude, numericality: { in: -180..180 }
 
+  has_many :launches
+  has_many :rockets, through: :launches
 
 end

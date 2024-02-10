@@ -5,4 +5,6 @@ class Crew < ApplicationRecord
   validates :name, uniqueness: true, length: { maximum: 50 }
   validates :status, length: { maximum: 30 }
 
+  has_many :assignments
+  has_many :launches, through: :assignments
 end
