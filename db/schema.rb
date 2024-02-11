@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_10_073211) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_11_094729) do
   create_table "assignments", force: :cascade do |t|
-    t.integer "crew_id", null: false
-    t.integer "launch_id", null: false
+    t.string "crew_id", null: false
+    t.string "launch_id", null: false
     t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,28 +30,29 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_10_073211) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "launch_pads", id: :string, force: :cascade do |t|
+  create_table "launches", id: :string, force: :cascade do |t|
+    t.string "date"
+    t.string "rocket_id", null: false
+    t.string "launchpad_id", null: false
+    t.string "success"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "name"
-    t.string "full_name"
+    t.index ["launchpad_id"], name: "index_launches_on_launchpad_id"
+    t.index ["rocket_id"], name: "index_launches_on_rocket_id"
+  end
+
+  create_table "launchpads", id: :string, force: :cascade do |t|
+    t.string "name"
+    t.string "fullname"
     t.string "description"
     t.string "status"
-    t.integer "numberoflaunches"
+    t.integer "numoflaunches"
     t.string "image"
     t.decimal "latitude"
     t.decimal "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "launches", id: :string, force: :cascade do |t|
-    t.datetime "date"
-    t.integer "rocket_id", null: false
-    t.integer "launchpad_id", null: false
-    t.string "outcome"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["launchpad_id"], name: "index_launches_on_launchpad_id"
-    t.index ["rocket_id"], name: "index_launches_on_rocket_id"
   end
 
   create_table "rockets", id: :string, force: :cascade do |t|
@@ -62,7 +63,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_10_073211) do
     t.string "variant"
     t.string "image"
     t.integer "costperlaunch"
-    t.integer "successratepercent"
+    t.integer "rateofsuccess"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

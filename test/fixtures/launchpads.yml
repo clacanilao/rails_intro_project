@@ -3,10 +3,10 @@
 one:
   id: MyString
   name: MyString
-  full_name: MyString
+  fullname: MyString
   description: MyString
   status: MyString
-  numberoflaunches: 1
+  numoflaunches: 1
   image: MyString
   latitude: 9.99
   longitude: 9.99
@@ -14,10 +14,10 @@ one:
 two:
   id: MyString
   name: MyString
-  full_name: MyString
+  fullname: MyString
   description: MyString
   status: MyString
-  numberoflaunches: 1
+  numoflaunches: 1
   image: MyString
   latitude: 9.99
   longitude: 9.99

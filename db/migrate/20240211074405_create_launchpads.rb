@@ -1,12 +1,12 @@
-class CreateLaunchPads < ActiveRecord::Migration[7.1]
+class CreateLaunchpads < ActiveRecord::Migration[7.1]
   def change
-    create_table :launch_pads, id: false do |t|
+    create_table :launchpads, id: false do |t|
       t.string :id, primary_key: true
       t.string :name
-      t.string :full_name
+      t.string :fullname
       t.string :description
       t.string :status
-      t.integer :numberoflaunches
+      t.integer :numoflaunches
       t.string :image
       t.decimal :latitude
       t.decimal :longitude

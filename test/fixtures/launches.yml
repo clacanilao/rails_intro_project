@@ -2,14 +2,14 @@
 
 one:
   id: MyString
-  date: 2024-02-09 22:10:06
+  date: MyString
   rocket: one
   launchpad: one
-  outcome: MyString
+  success: MyString
 
 two:
   id: MyString
-  date: 2024-02-09 22:10:06
+  date: MyString
   rocket: two
   launchpad: two
-  outcome: MyString
+  success: MyString
