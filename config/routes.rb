@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  get 'about/index'
+  root to: 'home#index'
+
+  resources :rockets, only: [:index, :show]
+  resources :launchpads, only: [:index, :show]
+  resources :launches, only: [:index, :show]
+  resources :crews, only: [:index, :show]
+
+  get 'about' => "about#index", as: 'about'
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

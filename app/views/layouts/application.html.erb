@@ -8,9 +8,24 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   </head>
 
   <body>
+    <h1 class="title is-1">SpaceX Launches</h1>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item"><%= link_to "Home", root_path %></a>
+          <a class="navbar-item"><%= link_to "Launches", launches_path %></a>
+          <a class="navbar-item"><%= link_to "Rockets", rockets_path %></a>
+          <a class="navbar-item"><%= link_to "Launch Pads", launchpads_path %></a>
+          <a class="navbar-item"><%= link_to "Crew", crews_path %></a>
+          <a class="navbar-item"><%= link_to "About Us", about_index_path %></a>
+        </div>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
