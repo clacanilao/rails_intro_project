@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+#erd{
+  max-width: 100%;
+  height: auto;
+}
+
+.item{
+  margin: 10px;
+  border: 1px solid gray;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+#search_form{
+  margin-left: 10px;
+}
+
+.crewimg{
+  width: 128px;
+  height: 128px;
+}

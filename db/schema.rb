@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_11_094729) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_12_193649) do
   create_table "assignments", force: :cascade do |t|
     t.string "crew_id", null: false
     t.string "launch_id", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_11_094729) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "image"
     t.index ["launchpad_id"], name: "index_launches_on_launchpad_id"
     t.index ["rocket_id"], name: "index_launches_on_rocket_id"
   end

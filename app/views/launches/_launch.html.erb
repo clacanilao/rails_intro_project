@@ -1,0 +1,16 @@
+<div class="tile is-flex is-flex-direction-column is-justify-content-center is-align-items-center item">
+  <figure class="image is-128x128">
+    <% if launch.image == nil %>
+      <%= image_tag("launch.jpg") %>
+    <% else %>
+      <img src="<%= launch.image %>" alt="Image of <%= launch.name%> Launch">
+    <% end %>
+  </figure>
+  <h1><strong>
+    <% if current_page?(launches_path)%>
+      <%= link_to launch.name, launch %>
+    <% else %>
+      <%= launch.name %>
+    <% end %>
+    </strong></h1>
+</div>

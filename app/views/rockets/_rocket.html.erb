@@ -1,0 +1,16 @@
+<div class="tile is-flex is-flex-direction-column is-justify-content-center is-align-items-center item">
+  <figure class="image is-128x128">
+    <% if rocket.image == nil %>
+      <%= image_tag("rocket.jpg") %>
+    <% else %>
+      <img src="<%= rocket.image %>" alt="Image of <%= rocket.name%> Rocket">
+    <% end %>
+  </figure>
+  <h1><strong>
+    <% if current_page?(rockets_path)%>
+      <%= link_to rocket.name, rocket %>
+    <% else %>
+      <%= rocket.name %>
+    <% end %>
+    </strong></h1>
+</div>

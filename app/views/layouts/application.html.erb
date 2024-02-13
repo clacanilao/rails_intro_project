@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsIntroProject</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title><%= yield(:html_title) + " - " if content_for?(:html_title)%>SpaceX Launches</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,18 +15,39 @@
   <body>
     <h1 class="title is-1">SpaceX Launches</h1>
     <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-menu">
+      <div class="navbar-menu is-active">
         <div class="navbar-start">
           <a class="navbar-item"><%= link_to "Home", root_path %></a>
           <a class="navbar-item"><%= link_to "Launches", launches_path %></a>
           <a class="navbar-item"><%= link_to "Rockets", rockets_path %></a>
           <a class="navbar-item"><%= link_to "Launch Pads", launchpads_path %></a>
           <a class="navbar-item"><%= link_to "Crew", crews_path %></a>
-          <a class="navbar-item"><%= link_to "About Us", about_index_path %></a>
+          <a class="navbar-item"><%= link_to "About Us", about_path %></a>
+          <%= form_with(url: search_search_path, method: :get, local: true, id: "search_form") do |form| %>
+            <div class="is-flex is-flex-direction-row is-align-content-space-between">
+              <div class="field is-grouped mb-5">
+                <div class="control is-expanded">
+                  <%= form.text_field :keywords, class: "input", placeholder: 'Search For Launches' %>
+                </div>
+              </div>
+              <div class="select">
+                <%= form.select :category, options_for_select([
+                  ['Launches', 'launches'],
+                  ['Rockets', 'rockets'],
+                  ['Launch Pads', 'launchpads'],
+                  ['Crew', 'crews']
+                ])%>
+              </div>
+              <div class="control">
+                <%= form.submit 'Search', class: "button is-primary" %>
+              </div>
+            </div>
+          <% end %>
         </div>
         </ul>
       </div>
     </nav>
+
     <%= yield %>
   </body>
 </html>

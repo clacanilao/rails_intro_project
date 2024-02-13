@@ -1,0 +1,16 @@
+<div class="tile is-flex is-flex-direction-column is-justify-content-center is-align-items-center item">
+  <figure class="image is-128x128">
+    <% if launchpad.image == nil %>
+      <%= image_tag("launch.jpg") %>
+    <% else %>
+      <img src="<%= launchpad.image %>" alt="Image of <%= launchpad.name%> Launchpad">
+    <% end %>
+  </figure>
+  <h1><strong>
+    <% if current_page?(launchpads_path)%>
+      <%= link_to launchpad.name, launchpad %>
+    <% else %>
+      <%= launchpad.name %>
+    <% end %>
+    </strong></h1>
+</div>

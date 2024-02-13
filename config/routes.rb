@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'about/index'
+  get 'search/search'
   root to: 'home#index'
 
   resources :rockets, only: [:index, :show]
@@ -7,7 +7,13 @@ Rails.application.routes.draw do
   resources :launches, only: [:index, :show]
   resources :crews, only: [:index, :show]
 
-  get 'about' => "about#index", as: 'about'
+  resources :search, only: [] do
+    collection do
+      get "search", to: "search#search"
+    end
+  end
+
+  get "/about", to: "about#index"
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,5 +1,5 @@
 class AboutController < ApplicationController
-  def self.index
-    puts "huh"
+  def index
+    @current_url = request.url
   end
 end

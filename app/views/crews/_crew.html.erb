@@ -1,0 +1,12 @@
+<div class="tile is-flex is-flex-direction-column is-justify-content-center is-align-items-center item">
+  <figure class="image is-128x128">
+    <img src="<%= crew.image %>" alt="Image of <%= crew.name%>">
+  </figure>
+  <h1><strong>
+    <% if current_page?(crews_path)%>
+      <%= link_to crew.name, crew %>
+    <% else %>
+      <%= crew.name %>
+    <% end %>
+    </strong></h1>
+</div>

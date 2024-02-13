@@ -1,2 +1,4 @@
-<h1>Rockets#show</h1>
-<p>Find me in app/views/rockets/show.html.erb</p>
+<% content_for(:html_title) {@rocket.name}%>
+<%= render @rocket%>
+
+

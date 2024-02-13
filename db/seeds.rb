@@ -68,7 +68,8 @@ launches.each do |c|
     rocket_id:          c['rocket'],
     launchpad_id:       c['launchpad'],
     success:            c['success'],
-    name:               c['name']
+    name:               c['name'],
+    image:              c['links']['patch']['large']
   )
 end
 
