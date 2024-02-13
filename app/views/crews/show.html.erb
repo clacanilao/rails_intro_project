@@ -1,4 +1,12 @@
 <body>
   <%= render @crew %>
+  <% unless @launches.empty? %>
+  <h1 class="title is-6">Launches</h1>
+    <ul>
+      <% @launches.each do |l| %>
+        <li><%= link_to l[1], launch_path(l[0]) %> - <%= l[2] %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </body>
 

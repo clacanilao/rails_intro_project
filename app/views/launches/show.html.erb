@@ -1,3 +1,11 @@
 <body>
   <%= render @launch %>
+  <% unless @crews.empty? %>
+    <h1 class="title is-6">Crew members</h1>
+    <ul>
+      <% @crews.each do |c| %>
+        <li><%= link_to c[1], crew_path(c[0]) %> - <%= c[2] %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </body>
