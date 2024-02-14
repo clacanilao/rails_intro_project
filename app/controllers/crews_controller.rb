@@ -1,6 +1,6 @@
 class CrewsController < ApplicationController
   def index
-    @crews = Crew.all
+    @crews = Crew.all.page(params[:page]).per(9)
   end
 
   def show

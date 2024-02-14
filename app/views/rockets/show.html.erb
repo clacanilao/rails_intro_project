@@ -1,4 +1,28 @@
-<% content_for(:html_title) {@rocket.name}%>
-<%= render @rocket%>
+<body>
+  <% content_for(:html_title) {@rocket.name}%>
+  <div class="tile is-flex is-flex-direction-column is-justify-content-center is-align-items-center item">
+    <% if @rocket.image == nil %>
+      <%= image_tag("@rocket.jpg", alt: "Default Rocket Image", class: "img-thumbnail") %>
+    <% else %>
+      <%= image_tag(@rocket.image, alt: "Image of #{@rocket.name}", class: "img-thumbnail") %>
+    <% end %>
+    <h2>
+      <% if current_page?(rockets_path)%>
+        <%= link_to @rocket.name, rocket %>
+      <% else %>
+        <%= @rocket.name %>
+      <% end %>
+    </h2>
+    <% unless @launchpads.empty? %>
+      <h3 class="title is-6">Launches</h3>
+      <ul>
+        <% @launchpads.each do |c| %>
+          <li><%= link_to c[3], launch_path(c[2]) %> at <%= link_to c[1], launchpad_path(c[0]) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</body>
+
 
 

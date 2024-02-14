@@ -1,6 +1,24 @@
 <body>
-  <h1 class="title is-3">Crew</h1>
-  <div class="is-flex is-justify-content-space-between is-flex-wrap-wrap is-align-content-stretch">
-    <%= render @crews %>
+  <h1>Crew</h1>
+  <div class="container">
+    <div class="row">
+      <% @crews.each do |crew| %>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="item">
+            <div class="img">
+              <%= image_tag(crew.image, alt: "Image of #{crew.name}", class: "img-thumbnail") %>
+            </div>
+            <h4>
+              <% if current_page?(crews_path)%>
+                <%= link_to crew.name, crew %>
+              <% else %>
+                <%= crew.name %>
+              <% end %>
+            </h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
+  <%= paginate @crews %>
 </body>

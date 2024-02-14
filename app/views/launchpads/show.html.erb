@@ -1,3 +1,24 @@
 <body>
-  <%= render @launchpad%>
+  <div class="tile is-flex is-flex-direction-column is-justify-content-center is-align-items-center item">
+    <% if @launchpad.image == nil %>
+      <%= image_tag("launch.jpg", alt: "Default Launchpad Image", class: "img-thumbnail") %>
+    <% else %>
+      <%= image_tag(@launchpad.image, alt: "Image of #{@launchpad.name}", class: "img-thumbnail") %>
+    <% end %>
+    <h2>
+      <% if current_page?(launchpads_path)%>
+        <%= link_to @launchpad.name, launchpad %>
+      <% else %>
+        <%= @launchpad.name %>
+      <% end %>
+    </h2>
+    <% unless @rockets.empty? %>
+      <h3 class="title is-6">Rockets Launched</h3>
+      <ul>
+        <% @rockets.each do |c| %>
+          <li><%= link_to c[1], rocket_path(c[0]) %> at <%= link_to c[3], launch_path(c[2]) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
 </body>

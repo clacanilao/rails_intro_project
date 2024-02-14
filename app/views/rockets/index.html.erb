@@ -1,6 +1,28 @@
 <body>
-  <h1 class="title is-3">Rockets</h1>
-  <div class="is-flex is-justify-content-space-between is-flex-wrap-wrap is-align-content-stretch">
-    <%= render @rockets%>
-  </div>
+  <h1>Rockets</h1>
+    <div class="container">
+      <div class="row">
+        <% @rockets.each do |rocket| %>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="item">
+              <div class="img">
+                <% if rocket.image == nil %>
+                  <%= image_tag("rocket.jpg", alt: "Default Rocket Image", class: "img-thumbnail") %>
+                <% else %>
+                  <%= image_tag(rocket.image, alt: "Image of #{rocket.name}", class: "img-thumbnail") %>
+                <% end %>
+              </div>
+              <h4>
+                <% if current_page?(rockets_path)%>
+                  <%= link_to rocket.name, rocket %>
+                <% else %>
+                  <%= rocket.name %>
+                <% end %>
+              </h4>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <%= paginate @rockets %>
 </body>

@@ -1,6 +1,28 @@
 <body>
-  <h1 class="title is-3">Launches</h1>
-  <div class="is-flex is-justify-content-space-between is-flex-wrap-wrap is-align-content-stretch">
-    <%= render @launches%>
+  <h1>Launches</h1>
+  <div class="container">
+    <div class="row">
+      <% @launches.each do |launch| %>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="item">
+            <div class="img">
+              <% if launch.image == nil %>
+                <%= image_tag("launch.jpg", alt: "Default Launch Image", class: "img-thumbnail") %>
+              <% else %>
+                <%= image_tag(launch.image, alt: "Image of #{launch.name}", class: "img-thumbnail") %>
+              <% end %>
+            </div>
+            <h4>
+              <% if current_page?(launches_path)%>
+                <%= link_to launch.name, launch %>
+              <% else %>
+                <%= launch.name %>
+              <% end %>
+            </h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
+  <%= paginate @launches %>
 </body>

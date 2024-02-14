@@ -1,12 +1,21 @@
 <body>
-  <%= render @crew %>
-  <% unless @launches.empty? %>
-  <h1 class="title is-6">Launches</h1>
-    <ul>
-      <% @launches.each do |l| %>
-        <li><%= link_to l[1], launch_path(l[0]) %> - <%= l[2] %></li>
+  <div class="item">
+    <%= image_tag(@crew.image, alt: "Image of #{@crew.name}", class: "img-thumbnail") %>
+    <h2>
+      <% if current_page?(crews_path)%>
+        <%= link_to @crew.name, crew %>
+      <% else %>
+        <%= @crew.name %>
       <% end %>
-    </ul>
-  <% end %>
+    </h2>
+    <% unless @launches.empty? %>
+    <h3>Launches</h3>
+      <ul>
+        <% @launches.each do |l| %>
+          <li><%= link_to l[1], launch_path(l[0]) %> - <%= l[2] %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
 </body>
 

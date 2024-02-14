@@ -1,6 +1,6 @@
 class LaunchesController < ApplicationController
   def index
-    @launches = Launch.all
+    @launches = Launch.all.page(params[:page]).per(9)
   end
 
   def show

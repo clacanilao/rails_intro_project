@@ -19,11 +19,23 @@
   height: auto;
 }
 
+
 .item{
   margin: 10px;
   border: 1px solid gray;
   border-radius: 25px;
   padding: 20px;
+  /* height: 300px; */
+}
+
+.item img{
+  position:relative;
+  height: 150px;
+  width: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  left: 5;
+  top: 2;
 }
 
 #search_form{
@@ -33,4 +45,52 @@
 .crewimg{
   width: 128px;
   height: 128px;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  color: #333;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.pagination .active a {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination .disabled a {
+  color: #ccc;
+}
+
+.pagination .prev, .pagination .next {
+  margin: 0 10px;
+}
+
+.input{
+  width: 200px;
+}
+
+.img{
+  object-fit: cover;
+}
+
+.footer{
+  margin-top: 15px;
+  position: relative;
+  bottom: 0px;
+}
+
+body{
+  /* padding-top: 56px; */
+  min-height: 98vh;
+  margin: 0px auto;
 }

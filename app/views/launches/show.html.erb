@@ -1,11 +1,25 @@
 <body>
-  <%= render @launch %>
-  <% unless @crews.empty? %>
-    <h1 class="title is-6">Crew members</h1>
-    <ul>
-      <% @crews.each do |c| %>
-        <li><%= link_to c[1], crew_path(c[0]) %> - <%= c[2] %></li>
+  <div class="tile is-flex is-flex-direction-column is-justify-content-center is-align-items-center item">
+    <% if @launch.image == nil %>
+      <%= image_tag("@launch.jpg", alt: "Default Launch Image", class: "img-thumbnail") %>
+    <% else %>
+      <%= image_tag(@launch.image, alt: "Image of #{@launch.name}", class: "img-thumbnail")%>
+    <% end %>
+    </figure>
+    <h2>
+      <% if current_page?(launches_path)%>
+        <%= link_to @launch.name, launch %>
+      <% else %>
+        <%= @launch.name %>
       <% end %>
-    </ul>
-  <% end %>
+    </h2>
+    <% unless @crews.empty? %>
+      <h3 class="title is-6">Crew members</h3>
+      <ul>
+        <% @crews.each do |c| %>
+          <li><%= link_to c[1], crew_path(c[0]) %> - <%= c[2] %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
 </body>
