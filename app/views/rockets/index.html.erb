@@ -1,4 +1,4 @@
-<body>
+<body class="main">
   <h1>Rockets</h1>
     <div class="container">
       <div class="row">
@@ -12,13 +12,7 @@
                   <%= image_tag(rocket.image, alt: "Image of #{rocket.name}", class: "img-thumbnail") %>
                 <% end %>
               </div>
-              <h4>
-                <% if current_page?(rockets_path)%>
-                  <%= link_to rocket.name, rocket %>
-                <% else %>
-                  <%= rocket.name %>
-                <% end %>
-              </h4>
+              <h4><%= link_to rocket.name, rocket %></h4>
             </div>
           </div>
         <% end %>

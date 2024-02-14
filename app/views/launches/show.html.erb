@@ -1,25 +1,34 @@
-<body>
-  <div class="tile is-flex is-flex-direction-column is-justify-content-center is-align-items-center item">
-    <% if @launch.image == nil %>
-      <%= image_tag("@launch.jpg", alt: "Default Launch Image", class: "img-thumbnail") %>
-    <% else %>
-      <%= image_tag(@launch.image, alt: "Image of #{@launch.name}", class: "img-thumbnail")%>
-    <% end %>
-    </figure>
-    <h2>
-      <% if current_page?(launches_path)%>
-        <%= link_to @launch.name, launch %>
+<body class="main">
+  <div class="showitem">
+    <div>
+      <% if @launch.image == nil %>
+        <%= image_tag("launch.jpg", alt: "Default Launch Image", class: "img-thumbnail") %>
       <% else %>
-        <%= @launch.name %>
+        <%= image_tag(@launch.image, alt: "Image of #{@launch.name}", class: "img-thumbnail")%>
       <% end %>
-    </h2>
-    <% unless @crews.empty? %>
-      <h3 class="title is-6">Crew members</h3>
-      <ul>
-        <% @crews.each do |c| %>
-          <li><%= link_to c[1], crew_path(c[0]) %> - <%= c[2] %></li>
+    </div>
+    <div>
+      <h2><%= @launch.name %></h2>
+      <p><i><%= @launch.date %></i></p>
+      <p>Rocket - <%= link_to @rocketname[0], rocket_path(@launch.rocket_id) %></p>
+      <p>Launchpad - <%= link_to @launchpadname[0], launchpad_path(@launch.launchpad_id) %></p>
+      <% unless @launch.success.nil? %>
+        <% if @launch.success == "t"%>
+        <p> The launch was successful </p>
+        <% elsif @launch.success == "f" %>
+        <p> The launch was unsuccessful </p>
         <% end %>
-      </ul>
-    <% end %>
+      <% else %>
+        <p> Launch status is unknown </p>
+      <% end %>
+      <% unless @crews.empty? %>
+        <h3 class="title is-6">Crew members</h3>
+        <ul>
+          <% @crews.each do |c| %>
+            <li><%= link_to c[1], crew_path(c[0]) %> - <%= c[2] %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
   </div>
 </body>

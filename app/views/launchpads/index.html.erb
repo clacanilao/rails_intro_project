@@ -1,4 +1,4 @@
-<body>
+<body class="main">
   <h1>Launchpads</h1>
   <div class="container">
     <div class="row">
@@ -12,13 +12,7 @@
                 <%= image_tag(launchpad.image, alt: "Image of #{launchpad.name}", class: "img-thumbnail") %>
               <% end %>
             </div>
-            <h4>
-              <% if current_page?(launchpads_path)%>
-                <%= link_to launchpad.name, launchpad %>
-              <% else %>
-                <%= launchpad.name %>
-              <% end %>
-            </h4>
+            <h4><%= link_to launchpad.name, launchpad %></h4>
           </div>
         </div>
       <% end %>
