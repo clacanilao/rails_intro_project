@@ -1,18 +1,16 @@
-<body>
-  <div class="container">
-    <h1>Crew</h1>
-    <div class="row">
-      <% @crews.each do |crew| %>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="item">
-            <div class="img">
-              <%= image_tag(crew.image, alt: "Image of #{crew.name}", class: "img-thumbnail") %>
-            </div>
-            <h4><%= link_to crew.name, crew %></h4>
+<div class="container">
+  <h1>Crew</h1>
+  <div class="row">
+    <% @crews.each do |crew| %>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="item">
+          <div class="img">
+            <%= image_tag(crew.image, alt: "Image of #{crew.name}", class: "img-thumbnail") %>
           </div>
+          <h4><%= link_to crew.name, crew %></h4>
         </div>
-      <% end %>
-    </div>
-    <%= paginate @crews %>
+      </div>
+    <% end %>
   </div>
-</body>
+  <%= paginate @crews %>
+</div>

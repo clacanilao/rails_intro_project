@@ -1,20 +1,18 @@
-<body class="main">
-  <div class="container search">
-    <% if params[:keywords].present? %>
-      <p>
-        Found <%=pluralize(@results.count, "Result")%> for: <%= params[:keywords]%>
-      </p>
-    <% else %>
-      <p>
-        Found <%=pluralize(@results.count, "Result")%> for <%= params[:category].capitalize %>
-      </p>
+<div class="container search">
+  <% if params[:keywords].present? %>
+    <p>
+      Found <%=pluralize(@results.count, "Result")%> for: <%= params[:keywords]%>
+    </p>
+  <% else %>
+    <p>
+      Found <%=pluralize(@results.count, "Result")%> for <%= params[:category].capitalize %>
+    </p>
+  <% end %>
+  <ul>
+    <% @results.each do |r| %>
+    <li>
+      <%= link_to r.name, r %>
+    </li>
     <% end %>
-    <ul>
-      <% @results.each do |r| %>
-      <li>
-        <%= link_to r.name, r %>
-      </li>
-      <% end %>
-    </ul>
-  </div>
-</body>
+  </ul>
+</div>

@@ -181,3 +181,7 @@ body::before{
 .align{
   text-align: right;
 }
+
+.navbar-toggler.outlined{
+  border: 1px solid white;
+}

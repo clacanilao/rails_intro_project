@@ -1,23 +1,21 @@
-<body class="main">
-  <div class="container">
-    <h1>Launches</h1>
-    <div class="row">
-      <% @launches.each do |launch| %>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="item">
-            <div class="img">
-              <% if launch.image == nil %>
-                <%= image_tag("launch.jpg", alt: "Default Launch Image", class: "img-thumbnail") %>
-              <% else %>
-                <%= image_tag(launch.image, alt: "Image of #{launch.name}", class: "img-thumbnail") %>
-              <% end %>
-            </div>
-            <h4><%= link_to launch.name, launch %></h4>
-            <p class="text-body-tertiary"><%= launch.date %></p>
+<div class="container">
+  <h1>Launches</h1>
+  <div class="row">
+    <% @launches.each do |launch| %>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="item">
+          <div class="img">
+            <% if launch.image == nil %>
+              <%= image_tag("launch.jpg", alt: "Default Launch Image", class: "img-thumbnail") %>
+            <% else %>
+              <%= image_tag(launch.image, alt: "Image of #{launch.name}", class: "img-thumbnail") %>
+            <% end %>
           </div>
+          <h4><%= link_to launch.name, launch %></h4>
+          <p class="text-body-tertiary"><%= launch.date %></p>
         </div>
-      <% end %>
-    </div>
-    <%= paginate @launches %>
+      </div>
+    <% end %>
   </div>
-</body>
+  <%= paginate @launches %>
+</div>
