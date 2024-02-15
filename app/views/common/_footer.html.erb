@@ -1,5 +1,31 @@
-<footer class="footer py-3 bg-light">
-  <div class="container text-center">
-    <span class="text-muted">Clarence Lacanilao © 2024</span>
+<footer class="footer py-3">
+  <div class="container nomarg">
+    <div class="row">
+      <div class="col align">
+        <span>Clarence Lacanilao © 2024</span>
+      </div>
+      <div class="col">
+        <ul class="flinks">
+          <li>
+            <%= link_to "Home", root_path %>
+          </li>
+          <li>
+            <%= link_to "Launches", launches_path %>
+          </li>
+          <li>
+            <%= link_to "Rockets", rockets_path %>
+          </li>
+          <li>
+            <%= link_to "Launch Pads", launchpads_path %>
+          </li>
+          <li>
+            <%= link_to "Crew", crews_path %>
+          </li>
+          <li>
+            <%= link_to "About Us", about_path %>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </footer>

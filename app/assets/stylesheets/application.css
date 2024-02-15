@@ -21,10 +21,12 @@
 
 
 .item{
+  background-color: rgba(238, 255, 254, 0.221);
   margin: 10px;
   border: 1px solid gray;
   border-radius: 25px;
   padding: 20px;
+  color: white;
   /* height: 300px; */
 }
 
@@ -51,44 +53,6 @@
   max-width: 500px;
 }
 
-.showitem-row{
-  margin: auto;
-  width: 1100px;
-  border: 1px solid gray;
-  border-radius: 25px;
-  padding: 25px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-/* .showimg:nth-child(1){
-  position:relative;
-  height: 350px;
-  width: 500px;
-  max-width: 100%;
-  max-height: 100%;
-  left: 5;
-  top: 2;
-  margin-bottom: 5px;
-}
-
-.showimg:nth-child(2){
-  height: 300px;
-  width: 400px;
-} */
-
-/* .showimg{
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-}
-
-.showinfo{
-  width: 500px;
-} */
-
 .showitem{
   align-content: center;
   display: flex;
@@ -96,8 +60,8 @@
   flex-wrap: wrap;
 }
 
-#search_form{
-  margin-left: 10px;
+.search p:nth-child(1){
+  margin: 0px;
 }
 
 .crewimg{
@@ -112,7 +76,8 @@
 }
 
 .pagination a {
-  color: #333;
+  background-color: rgba(238, 255, 254, 0.221);
+  color: white;
   padding: 5px 10px;
   margin: 0 5px;
   border: 1px solid #ccc;
@@ -137,11 +102,6 @@
   width: 200px;
 }
 
-/* .img{
-  height: 200px;
-  width: 500px;
-} */
-
 .footer{
   margin-top: auto;
   padding: 10px 0;
@@ -159,5 +119,65 @@ body{
 .container{
   margin-top: 15px;
   margin-bottom: 15px;
+  color: white;
 }
 
+.flinks{
+  margin: 0px;
+}
+
+.flinks li{
+  list-style: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.flinks li a{
+  text-decoration: none;
+  color: darkgrey;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.flinks li a:hover{
+  color: white;
+}
+
+body::before{
+  content: "";
+  z-index: -1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgb(1, 5, 19) no-repeat url('/assets/background.jpg') center ;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.nomarg{
+  margin-top: 0px;
+}
+
+.showinfo, .showitem, .navbar, .footer{
+  background-color: rgba(238, 255, 254, 0.221);
+  color: white;
+  padding: 20px;
+}
+
+.showinfo, .showitem{
+  border-radius: 25px;
+  border: 1px solid white;
+}
+
+.navbar{
+  border-bottom: 1px solid white;
+}
+
+.footer{
+  border-top: 1px solid white;
+}
+
+.align{
+  text-align: right;
+}

@@ -6,7 +6,7 @@
       </div>
       <div>
         <h2><%= @crew.name %></h2>
-        <p>Status - <%= @crew.status %></p>
+        <p>Status - <%= @crew.status.capitalize %></p>
         <p>Wiki - <%= link_to @crew.wikilink, @crew.wikilink %> </p>
         <% unless @launches.empty? %>
         <p>Launches done</p>

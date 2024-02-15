@@ -16,9 +16,9 @@
       <div class="col-lg-6">
         <div class="showinfo">
           <h2><%= @launchpad.name %></h2>
-          <h5><%= @launchpad.fullname %></h5>
+          <h5><i><%= @launchpad.fullname %></i></h5>
           <p><%= @launchpad.description %></p>
-          <p>Status: <%= @launchpad.status %></p>
+          <p>Status: <%= @launchpad.status.capitalize %></p>
           <p>Number of Launches: <%= @launchpad.numoflaunches %></p>
           <p>Latitude: <%= @launchpad.latitude%></p>
           <p>Longitude: <%= @launchpad.longitude%></p>

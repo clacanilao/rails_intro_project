@@ -12,14 +12,14 @@
         </div>
       </div>
       <div class="col-lg-6">
-        <div>
+        <div class="showinfo">
           <h2><%= @rocket.name %></h2>
           <p><%= @rocket.description %></p>
           <p><strong>Details</strong></p>
           <ul>
             <li>Height: <%= @rocket.height %> m</li>
             <li>Mass: <%=number_with_precision(@rocket.mass, :precision => 2, :delimiter => ',')%> kg</li>
-            <li>Type: <%= @rocket.variant %></li>
+            <li>Type: <%= @rocket.variant.capitalize %></li>
             <li>Cost Per Launch: $<%= number_with_delimiter(@rocket.costperlaunch, :delimiter => ',') %></li>
             <li>Launch Success Rate: <%= @rocket.rateofsuccess %>%</li>
           </ul>
