@@ -39,25 +39,16 @@
 }
 
 .showitem img{
-  position:relative;
-  height: 350px;
-  width: 500px;
-  max-width: 100%;
-  max-height: 100%;
-  left: 5;
-  top: 2;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  width: 350px;
 }
 
 .showitem{
-  margin: auto;
-  width: 500px;
-  border: 1px solid gray;
-  border-radius: 25px;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 500px;
 }
 
 .showitem-row{
@@ -72,7 +63,7 @@
   justify-content: space-between;
 }
 
-.showitem-row img:nth-child(1){
+/* .showimg:nth-child(1){
   position:relative;
   height: 350px;
   width: 500px;
@@ -83,12 +74,12 @@
   margin-bottom: 5px;
 }
 
-.showitem-row img:nth-child(2){
+.showimg:nth-child(2){
   height: 300px;
   width: 400px;
-}
+} */
 
-.showimg{
+/* .showimg{
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -96,10 +87,13 @@
 
 .showinfo{
   width: 500px;
-}
+} */
 
 .showitem{
   align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 #search_form{
@@ -143,25 +137,27 @@
   width: 200px;
 }
 
-.img{
-  object-fit: cover;
-}
+/* .img{
+  height: 200px;
+  width: 500px;
+} */
 
 .footer{
-  margin-top: 15px;
-  position: absolute;
-  bottom: 0px;
-  min-width: 100%;
+  margin-top: auto;
+  padding: 10px 0;
 }
 
 body{
   /* padding-top: 56px; */
   position: relative;
-  min-height: 98vh;
+  min-height: 100vh;
   margin: 0px auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.main{
-  margin-top: 70px;
-  margin-bottom: 70px;
+.container{
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
+

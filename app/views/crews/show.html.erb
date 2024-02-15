@@ -1,20 +1,22 @@
 <body class="main">
-  <div class="showitem">
-    <div>
-      <%= image_tag(@crew.image, alt: "Image of #{@crew.name}", class: "img-thumbnail") %>
-    </div>
-    <div>
-      <h2><%= @crew.name %></h2>
-      <p>Status - <%= @crew.status %></p>
-      <p>Wiki - <%= link_to @crew.wikilink, @crew.wikilink %> </p>
-      <% unless @launches.empty? %>
-      <p>Launches done</p>
-        <ul>
-          <% @launches.each do |l| %>
-            <li><%= link_to l[1], launch_path(l[0]) %> - <%= l[2] %></li>
-          <% end %>
-        </ul>
-      <% end %>
+  <div class="container">
+    <div class="showitem">
+      <div>
+        <%= image_tag(@crew.image, alt: "Image of #{@crew.name}", class: "img-thumbnail") %>
+      </div>
+      <div>
+        <h2><%= @crew.name %></h2>
+        <p>Status - <%= @crew.status %></p>
+        <p>Wiki - <%= link_to @crew.wikilink, @crew.wikilink %> </p>
+        <% unless @launches.empty? %>
+        <p>Launches done</p>
+          <ul>
+            <% @launches.each do |l| %>
+              <li><%= link_to l[1], launch_path(l[0]) %> - <%= l[2] %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
     </div>
   </div>
 </body>

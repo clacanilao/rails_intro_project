@@ -1,6 +1,6 @@
-<body class="main">
-  <h1>Crew</h1>
+<body>
   <div class="container">
+    <h1>Crew</h1>
     <div class="row">
       <% @crews.each do |crew| %>
         <div class="col-lg-4 col-md-6 col-sm-12">
@@ -13,6 +13,6 @@
         </div>
       <% end %>
     </div>
+    <%= paginate @crews %>
   </div>
-  <%= paginate @crews %>
 </body>

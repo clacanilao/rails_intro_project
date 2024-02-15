@@ -1,36 +1,41 @@
 <% content_for(:html_title) {@rocket.name}%>
 <body class="main">
-  <div class="showitem-row">
-    <div>
-      <% if @rocket.image == nil %>
-        <%= image_tag("@rocket.jpg", alt: "Default Rocket Image", class: "img-thumbnail") %>
-      <% else %>
-        <%= image_tag(@rocket.image, alt: "Image of #{@rocket.name}", class: "img-thumbnail") %>
-      <% end %>
-    </div>
-    <div class="showinfo">
-      <h2><%= @rocket.name %></h2>
-      <p><%= @rocket.description %></p>
-      <p><strong>Details</strong></p>
-      <ul>
-        <li>Height: <%= @rocket.height %> m</li>
-        <li>Mass: <%=number_with_precision(@rocket.mass, :precision => 2, :delimiter => ',')%> kg</li>
-        <li>Type: <%= @rocket.variant %></li>
-        <li>Cost Per Launch: $<%= number_with_delimiter(@rocket.costperlaunch, :delimiter => ',') %></li>
-        <li>Launch Success Rate: <%= @rocket.rateofsuccess %>%</li>
-      </ul>
-      <% unless @launchpads.empty? %>
-        <h3>Launches</h3>
-        <ul>
-          <% @launchpads.each do |c| %>
-            <li><%= link_to c[3], launch_path(c[2]) %> at <%= link_to c[1], launchpad_path(c[0]) %></li>
+  <div class="container">
+    <diV class="row">
+      <div class="col-lg-6">
+        <div >
+          <% if @rocket.image == nil %>
+            <%= image_tag("@rocket.jpg", alt: "Default Rocket Image", class: "img-thumbnail") %>
+          <% else %>
+            <%= image_tag(@rocket.image, alt: "Image of #{@rocket.name}", class: "img-thumbnail") %>
           <% end %>
-        </ul>
-      <% end %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div>
+          <h2><%= @rocket.name %></h2>
+          <p><%= @rocket.description %></p>
+          <p><strong>Details</strong></p>
+          <ul>
+            <li>Height: <%= @rocket.height %> m</li>
+            <li>Mass: <%=number_with_precision(@rocket.mass, :precision => 2, :delimiter => ',')%> kg</li>
+            <li>Type: <%= @rocket.variant %></li>
+            <li>Cost Per Launch: $<%= number_with_delimiter(@rocket.costperlaunch, :delimiter => ',') %></li>
+            <li>Launch Success Rate: <%= @rocket.rateofsuccess %>%</li>
+          </ul>
+          <% unless @launchpads.empty? %>
+            <h3>Launches</h3>
+            <ul>
+              <% @launchpads.each do |c| %>
+                <li><%= link_to c[3], launch_path(c[2]) %> at <%= link_to c[1], launchpad_path(c[0]) %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+      </div>
     </div>
-
   </div>
-</body>
+</div>
 
 
 

@@ -1,22 +1,22 @@
 <body class="main">
-  <h1>Rockets</h1>
-    <div class="container">
-      <div class="row">
-        <% @rockets.each do |rocket| %>
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="item">
-              <div class="img">
-                <% if rocket.image == nil %>
-                  <%= image_tag("rocket.jpg", alt: "Default Rocket Image", class: "img-thumbnail") %>
-                <% else %>
-                  <%= image_tag(rocket.image, alt: "Image of #{rocket.name}", class: "img-thumbnail") %>
-                <% end %>
-              </div>
-              <h4><%= link_to rocket.name, rocket %></h4>
+  <div class="container">
+    <h1>Rockets</h1>
+    <div class="row">
+      <% @rockets.each do |rocket| %>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="item">
+            <div class="img">
+              <% if rocket.image == nil %>
+                <%= image_tag("rocket.jpg", alt: "Default Rocket Image", class: "img-thumbnail") %>
+              <% else %>
+                <%= image_tag(rocket.image, alt: "Image of #{rocket.name}", class: "img-thumbnail") %>
+              <% end %>
             </div>
+            <h4><%= link_to rocket.name, rocket %></h4>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
-  <%= paginate @rockets %>
+    <%= paginate @rockets %>
+  </div>
 </body>
