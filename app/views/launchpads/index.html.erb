@@ -6,12 +6,13 @@
         <div class="item">
           <div class="img">
             <% if launchpad.image == nil %>
-              <%= image_tag("launch.jpg", alt: "Default Launchpad Image", class: "img-thumbnail") %>
+              <%= image_tag("launch.jpg", alt: "Default Launchpad Image", class: "img-thumbnail launchpadimg") %>
             <% else %>
-              <%= image_tag(launchpad.image, alt: "Image of #{launchpad.name}", class: "img-thumbnail") %>
+              <%= image_tag(launchpad.image, alt: "Image of #{launchpad.name}", class: "img-thumbnail launchpadimg") %>
             <% end %>
           </div>
           <h4><%= link_to launchpad.name, launchpad %></h4>
+          <p>Status: <%= launchpad.status.split.map(&:capitalize).join(' ') %></p>
         </div>
       </div>
     <% end %>

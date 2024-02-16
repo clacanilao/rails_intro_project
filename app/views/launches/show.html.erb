@@ -11,8 +11,8 @@
     <div>
       <h2><%= @launch.name %></h2>
       <p><i><%= @launch.date %></i></p>
-      <p>Rocket - <%= link_to @rocketname[0], rocket_path(@launch.rocket_id) %></p>
-      <p>Launchpad - <%= link_to @launchpadname[0], launchpad_path(@launch.launchpad_id) %></p>
+      <p>Rocket - <%= link_to @rocketname.first.name, rocket_path(@launch.rocket_id) %></p>
+      <p>Launchpad - <%= link_to @launchpadname.first.name, launchpad_path(@launch.launchpad_id) %></p>
       <% unless @launch.success.nil? %>
         <% if @launch.success == "t"%>
         <p> The launch was successful </p>
@@ -23,10 +23,10 @@
         <p> Launch status is unknown </p>
       <% end %>
       <% unless @crews.empty? %>
-        <h3 class="title is-6">Crew members</h3>
+        <p>Crew Members:</p>
         <ul>
           <% @crews.each do |c| %>
-            <li><%= link_to c[1], crew_path(c[0]) %> - <%= c[2] %></li>
+            <li><%= link_to c.name, crew_path(c.id) %> - <%= c.role %></li>
           <% end %>
         </ul>
       <% end %>

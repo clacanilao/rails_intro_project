@@ -1,4 +1,32 @@
 <div class="container">
-
+  <h1>SpaceX Launches</h1>
+  <p>Welcome to SpaceX Launches! In this website you will find details on launches, rockets, launch pads and crew members of SpaceX.</p>
+  <h2>Categories</h2>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="item">
+        <%= image_tag("homelaunch.jpg", alt: "Launch Home Image", class: "img-thumbnail")%>
+        <h3><%= link_to "Launches", launches_path%></h3>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="item">
+        <%= image_tag(@rocketimg, alt: "Rocket Home Image", class: "img-thumbnail")%>
+        <h3><%= link_to "Rockets", rockets_path%></h3>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="item">
+        <%= image_tag(@launchpadimg, alt: "Launch Pad Home Image", class: "img-thumbnail")%>
+        <h3><%= link_to "Launch Pads", launchpads_path%></h3>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="item">
+        <%= image_tag("homecrew.jpg", alt: "Crew Home Image", class: "img-thumbnail")%>
+        <h3><%= link_to "Crews", crews_path%></h3>
+      </div>
+    </div>
+  </div>
 </div>
 

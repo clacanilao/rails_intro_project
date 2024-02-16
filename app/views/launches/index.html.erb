@@ -8,11 +8,11 @@
             <% if launch.image == nil %>
               <%= image_tag("launch.jpg", alt: "Default Launch Image", class: "img-thumbnail") %>
             <% else %>
-              <%= image_tag(launch.image, alt: "Image of #{launch.name}", class: "img-thumbnail") %>
+              <%= image_tag(launch.image, alt: "Image of #{launch.name}", class: "img-thumbnail launchesimg") %>
             <% end %>
           </div>
           <h4><%= link_to launch.name, launch %></h4>
-          <p class="text-body-tertiary"><%= launch.date %></p>
+          <p class="text-body-tertiary">Local Date: <%= launch.date %></p>
         </div>
       </div>
     <% end %>

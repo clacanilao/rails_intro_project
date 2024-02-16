@@ -6,12 +6,13 @@
         <div class="item">
           <div class="img">
             <% if rocket.image == nil %>
-              <%= image_tag("rocket.jpg", alt: "Default Rocket Image", class: "img-thumbnail") %>
+              <%= image_tag("rocket.jpg", alt: "Default Rocket Image", class: "img-thumbnail rocketimg") %>
             <% else %>
-              <%= image_tag(rocket.image, alt: "Image of #{rocket.name}", class: "img-thumbnail") %>
+              <%= image_tag(rocket.image, alt: "Image of #{rocket.name}", class: "img-thumbnail rocketimg") %>
             <% end %>
           </div>
           <h4><%= link_to rocket.name, rocket %></h4>
+          <p>Cost Per Launch: $<%= number_with_delimiter(rocket.costperlaunch, :delimiter => ',')%> </p>
         </div>
       </div>
     <% end %>

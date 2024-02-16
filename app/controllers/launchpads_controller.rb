@@ -7,6 +7,7 @@ class LaunchpadsController < ApplicationController
     @launchpad = Launchpad.find(params[:id])
     @rockets = Rocket.joins(launches: :launchpad)
                  .where("launchpads.id = ?", params[:id])
-                 .pluck("rockets.id", "rockets.name", "launches.id", "launches.name")
+                 .select("DISTINCT rockets.id, rockets.name")
+    @launches = Launch.where(launchpad_id: params[:id]).select("launches.id, launches.name")
   end
 end

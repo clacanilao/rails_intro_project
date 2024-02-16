@@ -18,15 +18,23 @@
         <h2><%= @launchpad.name %></h2>
         <h5><i><%= @launchpad.fullname %></i></h5>
         <p><%= @launchpad.description %></p>
-        <p>Status: <%= @launchpad.status.capitalize %></p>
+        <p>Status: <%= @launchpad.status.split.map(&:capitalize).join(' ') %></p>
         <p>Number of Launches: <%= @launchpad.numoflaunches %></p>
         <p>Latitude: <%= @launchpad.latitude%></p>
         <p>Longitude: <%= @launchpad.longitude%></p>
         <% unless @rockets.empty? %>
-          <h3 class="title is-6">Rockets Launched</h3>
+          <h3>Rockets Launched</h3>
           <ul>
             <% @rockets.each do |c| %>
-              <li><%= link_to c[1], rocket_path(c[0]) %> at <%= link_to c[3], launch_path(c[2]) %></li>
+              <li><%= link_to c.name, rocket_path(c.id) %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <% unless @launches.empty? %>
+          <h3>Launches Done</h3>
+          <ul>
+            <% @launches.each do |c| %>
+              <li><%= link_to c.name, launch_path(c.id) %></li>
             <% end %>
           </ul>
         <% end %>

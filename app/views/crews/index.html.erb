@@ -5,9 +5,10 @@
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="item">
           <div class="img">
-            <%= image_tag(crew.image, alt: "Image of #{crew.name}", class: "img-thumbnail") %>
+            <%= image_tag(crew.image, alt: "Image of #{crew.name}", class: "img-thumbnail crewsimg") %>
           </div>
           <h4><%= link_to crew.name, crew %></h4>
+          <p>Status: <%= crew.status.split.map(&:capitalize).join(' ') %></p>
         </div>
       </div>
     <% end %>

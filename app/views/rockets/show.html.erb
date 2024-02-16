@@ -14,7 +14,7 @@
       <div class="showinfo">
         <h2><%= @rocket.name %></h2>
         <p><%= @rocket.description %></p>
-        <p><strong>Details</strong></p>
+        <p><strong>Details:</strong></p>
         <ul>
           <li>Height: <%= @rocket.height %> m</li>
           <li>Mass: <%=number_with_precision(@rocket.mass, :precision => 2, :delimiter => ',')%> kg</li>
@@ -23,10 +23,18 @@
           <li>Launch Success Rate: <%= @rocket.rateofsuccess %>%</li>
         </ul>
         <% unless @launchpads.empty? %>
-          <h3>Launches</h3>
+          <h3>Launch Pads Utilized</h3>
           <ul>
             <% @launchpads.each do |c| %>
-              <li><%= link_to c[3], launch_path(c[2]) %> at <%= link_to c[1], launchpad_path(c[0]) %></li>
+              <li><%= link_to c.name, launchpad_path(c.id) %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <% unless @launches.empty? %>
+          <h3>Launches Done</h3>
+          <ul>
+            <% @launches.each do |c| %>
+              <li><%= link_to c.name, launch_path(c.id) %></li>
             <% end %>
           </ul>
         <% end %>

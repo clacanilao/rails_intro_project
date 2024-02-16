@@ -6,13 +6,13 @@
     </div>
     <div>
       <h2><%= @crew.name %></h2>
-      <p>Status - <%= @crew.status.capitalize %></p>
+      <p>Status - <%= @crew.status.split.map(&:capitalize).join(' ') %></p>
       <p>Wiki - <%= link_to @crew.wikilink, @crew.wikilink %> </p>
       <% unless @launches.empty? %>
-      <p>Launches done</p>
+      <p>Launches Done:</p>
         <ul>
-          <% @launches.each do |l| %>
-            <li><%= link_to l[1], launch_path(l[0]) %> - <%= l[2] %></li>
+          <% @launches.each do |c| %>
+            <li><%= link_to c.name, launch_path(c.id) %> - <%= c.role %></li>
           <% end %>
         </ul>
       <% end %>
