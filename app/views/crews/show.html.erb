@@ -7,7 +7,7 @@
     <div>
       <h2><%= @crew.name %></h2>
       <p>Status - <%= @crew.status.split.map(&:capitalize).join(' ') %></p>
-      <p>Wiki - <%= link_to @crew.wikilink, @crew.wikilink %> </p>
+      <p>Wiki - <%= link_to @crew.wikilink, @crew.wikilink, target: "_blank" %> </p>
       <% unless @launches.empty? %>
       <p>Launches Done:</p>
         <ul>
